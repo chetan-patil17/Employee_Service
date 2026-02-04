@@ -1,0 +1,244 @@
+/* ============================================
+   🎨 EMPLOYEE SERVICE – MODERN DASHBOARD CSS
+   Glassmorphism | Dark UI | Clean Animations
+   ============================================ */
+
+/* =====================
+   Design Variables
+   ===================== */
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+
+    --bg-dark: #0f172a;
+    --bg-card: rgba(255, 255, 255, 0.08);
+    --bg-card-hover: rgba(255, 255, 255, 0.12);
+    --bg-input: rgba(255, 255, 255, 0.05);
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+
+    --border-color: rgba(255, 255, 255, 0.1);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.25);
+    --shadow-md: 0 6px 20px rgba(0,0,0,0.35);
+
+    --transition: 0.3s ease;
+}
+
+/* =====================
+   Reset & Base
+   ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* =====================
+   App Layout
+   ===================== */
+.app-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* =====================
+   Navigation Header
+   ===================== */
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-card);
+    backdrop-filter: blur(14px);
+    padding: 16px 24px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-brand-icon {
+    font-size: 28px;
+}
+
+.nav-brand h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* =====================
+   Main Content Grid
+   ===================== */
+.main-content {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 24px;
+}
+
+/* =====================
+   Cards
+   ===================== */
+.card {
+    background: var(--bg-card);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    background: var(--bg-card-hover);
+    box-shadow: var(--shadow-md);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-title-icon {
+    font-size: 22px;
+}
+
+/* =====================
+   Employee Form
+   ===================== */
+.emp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.emp-form input {
+    width: 100%;
+    padding: 14px;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.emp-form input::placeholder {
+    color: var(--text-secondary);
+}
+
+.emp-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--bg-card);
+}
+
+/* =====================
+   Buttons
+   ===================== */
+.btn {
+    padding: 14px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* =====================
+   Employee Table
+   ===================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: var(--bg-input);
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr:hover {
+    background: var(--bg-card-hover);
+}
+
+/* =====================
+   Employee Grid (Optional)
+   ===================== */
+.employee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 14px;
+}
+
+/* =====================
+   Responsive
+   ===================== */
+@media (max-width: 900px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .nav-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
